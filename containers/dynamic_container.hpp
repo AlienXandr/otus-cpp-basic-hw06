@@ -31,7 +31,7 @@ public:
     resize_scale_ = rhs.resize_scale_;
     delete[] data_;
     data_ = new T[rhs.capacity_];
-    for (int i = 0; i < next_; i++) {
+    for (size_t i = 0; i < next_; i++) {
       data_[i] = rhs.data_[i];
     }
 
