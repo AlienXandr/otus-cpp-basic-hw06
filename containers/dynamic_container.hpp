@@ -10,9 +10,11 @@ public:
       : data_{new T[N]}, capacity_{N}, next_{0}, resize_scale_{resize_scale} {};
 
   ~DynamicContainer() override {
-    delete[] data_;
-    capacity_ = 0;
-    next_ = 0;
+    if (capacity_) {
+      delete[] data_;
+      capacity_ = 0;
+      next_ = 0;
+    }
   }
 
   // Copy ctor
