@@ -9,7 +9,11 @@ public:
   explicit DynamicContainer(size_t N = 5, float resize_scale = 1.5)
       : data_{new T[N]}, capacity_{N}, next_{0}, resize_scale_{resize_scale} {};
 
-  ~DynamicContainer() override { delete[] data_; }
+  ~DynamicContainer() override {
+    delete[] data_;
+    capacity_ = 0;
+    next_ = 0;
+  }
 
   // Copy ctor
   DynamicContainer(const DynamicContainer &other) {
