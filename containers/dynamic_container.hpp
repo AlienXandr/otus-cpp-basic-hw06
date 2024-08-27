@@ -18,7 +18,7 @@ public:
     next_ = other.next_;
     resize_scale_ = other.resize_scale_;
     data_ = new T[other.capacity_];
-    for (int i = 0; i < next_; i++) {
+    for (size_t i = 0; i < next_; i++) {
       data_[i] = other.data_[i];
     }
   }
