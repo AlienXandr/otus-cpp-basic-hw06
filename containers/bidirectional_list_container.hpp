@@ -21,7 +21,7 @@ public:
 
   BidirectionalDataNode<T> *get(size_t pos) {
     BidirectionalDataNode<T> *ptr = head_;
-    int idx = 0;
+    size_t idx = 0;
 
     while (idx != pos) {
       if (ptr == NULL)
